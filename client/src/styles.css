@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #2D033B;
+    --secondary-color: #810CA8;
+    --tertiary-color: #C147E9;
+    --accent-color: #E5B8F4;
+    --dark-grey: #604B67;
+    --light-grey: #E4DDE6;
+    --true-grey: #F9F9F9;
+    --black: #333333;
+    --background-white: '';
+    --background-pink: #F3EDF7;
+    --true-white: #FFFFFF;
+    --published-green: #9AE6B4;
+    --draft-red: #FC8181;
+    --scheduled-yellow: #FBD38D;
+    --transparent: #00000000;
+  }
+  
+  .pageStyle {
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+  
+  .backgroundStyle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .overlayStyle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .buttonStyle.text {
+    font-family: 'Roboto, sans-serif';
+    color: var(--true-white); /* Use CSS variable */
+    font-weight: 400;
+    line-height: 23.44px;
+    font-size: 20px;
+  }
+  
+  .buttonStyle.mediumSmall {
+    background-color: var(--primary-color); /* Use CSS variable */
+    color: var(--true-white); /* Use CSS variable */
+    width: 135px;
+    height: 42px;
+    border-radius: 5px;
+    border-color: var(--primary-color); /* Use CSS variable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Roboto, sans-serif';
+    font-weight: 700;
+    line-height: 18.75px;
+    font-size: 16px;
+  }
+
+  .buttonStyle.transparent {
+    background-color: var(--transparent); /* Use CSS variable */
+    color: var(--true-white); /* Use CSS variable */
+    width: 109px;
+    height: 43px;
+    border-radius: 5px;
+    border: 2px solid var(--true-white); /* Use CSS variable */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Roboto, sans-serif';
+    font-weight: 400;
+    line-height: 23.44px;
+    font-size: 20px;
+  }
+  
+  
+  .titleStyle {
+    font-family: 'Roboto, sans-serif';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 117px;
+    color: var(--true-white); /* Use CSS variable */
+  }
+  
+ 
+  .cmsStyle {
+    font-family: 'Roboto, sans-serif';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 117px;
+    color: var(--accent-color); /* Use CSS variable */
+  }
+
+  
+  
