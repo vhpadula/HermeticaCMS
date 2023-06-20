@@ -1,0 +1,24 @@
+.titleStyle {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 10vw;
+    color: var(--true-white); /* Use CSS variable */
+}
+
+.subTitleStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 4vw;
+    color: var(--true-white); /* Use CSS variable */
+}
+
+.cmsStyle {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 10vw;
+    color: var(--accent-color); /* Use CSS variable */
+}

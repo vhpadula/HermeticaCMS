@@ -1,14 +1,25 @@
 import Rectangle from "../atoms/Rectangle";
-import { primaryColor } from "../../../colors";
+
 import AppLogo from "../molecules/AppLogo";
 
 export default function BottomBar() {
-  return (
-    <div style={{ position: "relative" }}>
-      <Rectangle width="100vw" height="120px" color={primaryColor} />
-      <div style={{ position: "absolute", top: "50%", right: "0%", transform: "translate(50%, -50%)" , marginRight: "110px"}}>
-        <AppLogo scale={0.2} />
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <Rectangle width="100%" height="10vw" color="var(--primary-color)">
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        alignItems: "center",
+                        marginRight: "20px",
+                        height: "100%",
+                    }}
+                >
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <AppLogo width={5.5} />
+                    </div>
+                </div>
+            </Rectangle>
+        </div>
+    );
 }
