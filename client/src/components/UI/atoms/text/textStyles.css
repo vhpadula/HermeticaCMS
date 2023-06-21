@@ -13,7 +13,8 @@
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 4vw;
-    color: var(--true-white); /* Use CSS variable */
+    color: var(--true-white);
+    white-space: nowrap; /* Use CSS variable */
 }
 
 .cmsStyle {

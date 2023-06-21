@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import "./buttonStyles.css";
 
-export default function CustomButton({ children, text }) {
+export default function IconButton({ children, text }) {
     return (
         <Button className="buttonStyle mediumSmall">
             {children}
@@ -11,7 +11,7 @@ export default function CustomButton({ children, text }) {
     );
 }
 
-CustomButton.propTypes = {
+IconButton.propTypes = {
     children: PropTypes.node.isRequired,
     text: PropTypes.string.isRequired,
 };

@@ -1,7 +1,8 @@
-import HomePage from "./components/pages/HomePage/HomePage";
+import LoginForm from "./components/UI/organisms/LoginForm";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-    return <HomePage />;
+    return <LoginForm />;
 }
 
 export default App;
