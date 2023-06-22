@@ -1,5 +1,9 @@
-import TransparentButton from "../../atoms/buttons/TransparentButton";
+import { Button } from "react-bootstrap";
 
 export default function GetStartedButton() {
-    return <TransparentButton buttonText="Get started for free" />;
+    return (
+        <Button variant="outline-light" size="lg" style={{ fontSize: "3.5vw" }}>
+            Get started for free
+        </Button>
+    );
 }

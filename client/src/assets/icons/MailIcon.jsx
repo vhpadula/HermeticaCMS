@@ -1,4 +1,4 @@
-export default function LockIcon() {
+export default function MailIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,14 @@ export default function LockIcon() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M19 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2ZM7 11V7a5 5 0 1 1 10 0v4"
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2Z"
+            />
+            <path
+                stroke="#810ca8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m22 6-10 7L2 6"
             />
         </svg>
     );

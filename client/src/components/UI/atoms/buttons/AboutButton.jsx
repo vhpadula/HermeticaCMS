@@ -5,12 +5,11 @@ export default function AboutButton() {
         fontFamily: "sans-serif",
         color: "var(--true-white)",
         fontWeight: 400,
-        fontSize: "2.5vw",
         textDecoration: "none",
     };
 
     return (
-        <Button variant="link" style={buttonStyleText}>
+        <Button variant="link" size="lg" style={buttonStyleText}>
             About
         </Button>
     );

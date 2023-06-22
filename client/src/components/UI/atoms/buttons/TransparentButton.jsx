@@ -1,14 +1,15 @@
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
-import "./buttonStyles.css";
-export default function TransparentButton({ buttonText = "Button" }) {
+
+export default function TransparentButton({ className, text = "Button" }) {
     return (
-        <Button className="buttonStyle transparent">
-            <span>{buttonText}</span>
+        <Button variant="outline-secondary" size="lg" className={className}>
+            <span>{text}</span>
         </Button>
     );
 }
 
 TransparentButton.propTypes = {
-    buttonText: PropTypes.string,
+    text: PropTypes.string,
+    className: PropTypes.string,
 };

@@ -1,4 +1,9 @@
-import TransparentButton from "../../atoms/buttons/TransparentButton";
+import { Button } from "react-bootstrap";
+
 export default function TransparentLoginButton() {
-    return <TransparentButton buttonText="Login" />;
+    return (
+        <Button variant="outline-light" size="lg">
+            Login
+        </Button>
+    );
 }

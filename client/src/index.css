@@ -14,5 +14,9 @@
     --draft-red: #fc8181;
     --scheduled-yellow: #fbd38d;
     --transparent: #00000000;
-    --font-family: "sans-serif";
+    --font-family: "Roboto";
+}
+
+body {
+    font-family: var(--font-family);
 }

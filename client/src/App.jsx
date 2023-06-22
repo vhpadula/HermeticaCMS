@@ -1,8 +1,8 @@
-import LoginForm from "./components/UI/organisms/LoginForm";
 import "bootstrap/dist/css/bootstrap.min.css";
+import RegisterPage from "./components/pages/RegisterPage/RegisterPage";
 
 function App() {
-    return <LoginForm />;
+    return <RegisterPage />;
 }
 
 export default App;

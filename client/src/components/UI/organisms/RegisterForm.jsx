@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -6,11 +5,9 @@ import Col from "react-bootstrap/Col";
 import LockIcon from "../../../assets/icons/LockIcon";
 import MailIcon from "../../../assets/icons/MailIcon";
 import AuthInput from "../molecules/AuthInput";
-import Checkbox from "../atoms/Checkbox";
 import ColorButton from "../atoms/buttons/ColorButton";
-import TransparentButton from "../atoms/buttons/TransparentButton";
 
-function LoginForm() {
+function RegisterForm() {
     return (
         <Form>
             <Container fluid>
@@ -24,7 +21,7 @@ function LoginForm() {
                     <Row>
                         <Col>
                             <AuthInput
-                                controlId="loginEmail"
+                                controlId="registerEmail"
                                 type="email"
                                 placeholder="Enter email"
                                 label="Email address"
@@ -37,7 +34,7 @@ function LoginForm() {
                     <Row>
                         <Col>
                             <AuthInput
-                                controlId="loginPassword"
+                                controlId="registerPassword"
                                 type="password"
                                 placeholder="Password"
                                 label="Password"
@@ -46,38 +43,32 @@ function LoginForm() {
                             </AuthInput>
                         </Col>
                     </Row>
-
                     <Row>
                         <Col>
-                            <Checkbox />
+                            <AuthInput
+                                controlId="registerConfirmPassword"
+                                type="password"
+                                placeholder="Confirm Password"
+                                label="Confirm Password"
+                            >
+                                <LockIcon />
+                            </AuthInput>
                         </Col>
                     </Row>
-
-                    <Row className="m-3" style={{ gap: "20px" }}>
-                        <Col>
-                            <TransparentButton
-                                className="w-100"
-                                text="Register"
-                            />
-                        </Col>
-
-                        <Col>
-                            <ColorButton className="w-100" text="Login" />
-                        </Col>
-                    </Row>
-
-                    <Row className="mb-3">
-                        <Button
-                            variant="link"
-                            style={{ color: "var(--secondary-color)" }}
-                        >
-                            Forgot Password?
-                        </Button>
-                    </Row>
+                    <div
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            margin: "3%",
+                        }}
+                    >
+                        <ColorButton className="w-75" text="Register" />
+                    </div>
                 </div>
             </Container>
         </Form>
     );
 }
 
-export default LoginForm;
+export default RegisterForm;
