@@ -6,6 +6,7 @@ export default function IconButton({
     text,
     variant = "primary",
     textColor,
+    width,
 }) {
     return (
         <Button
@@ -16,9 +17,13 @@ export default function IconButton({
                 alignItems: "center",
             }}
         >
-            <div style={{ marginRight: "3px" }}>{children}</div>
+            <div style={{ marginRight: "10%", width: `${width * 2.5}vw` }}>
+                {children}
+            </div>
 
-            <span style={{ color: textColor }}>{text}</span>
+            <span style={{ color: textColor, fontSize: `${width}vw` }}>
+                {text}
+            </span>
         </Button>
     );
 }
@@ -28,4 +33,5 @@ IconButton.propTypes = {
     text: PropTypes.string.isRequired,
     variant: PropTypes.string,
     textColor: PropTypes.string,
+    width: PropTypes.number.isRequired,
 };

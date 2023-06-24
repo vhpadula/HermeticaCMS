@@ -8,19 +8,21 @@ import SettingsIcon from "../../../assets/icons/SettingsIcon";
 import CustomNavLink from "./../molecules/CustomNavLink"; // Import the CustomNavLink component
 
 export default function MainPageNav() {
+    const navWidth = 1.5;
     return (
-        <div data-bs-theme="custom" style={{ height: "100%" }}>
+        <div data-bs-theme="custom" style={{ height: "100vh" }}>
             <Navbar
                 bg="backgroundPink"
-                className="me-auto flex-column"
-                style={{ width: "32vw", height: "100%" }}
+                className="me-auto flex-column h-100"
+                style={{ width: "20vw" }}
             >
                 <Container className="me-auto flex-column ">
-                    <div className="mb-3 mt-3">
+                    <div className="m-3">
                         <IconButton
                             text="Go to Website"
                             variant="light"
                             textColor="var(--primary-color)"
+                            width={1.5}
                         >
                             <OpenBookIcon />
                         </IconButton>
@@ -31,25 +33,42 @@ export default function MainPageNav() {
                         className="flex-column text-center "
                         variant="pills"
                     >
-                        <Navbar.Brand>Author Area</Navbar.Brand>
+                        <Navbar.Brand style={{ fontSize: "2vw" }}>
+                            Author Area
+                        </Navbar.Brand>
 
-                        <CustomNavLink href="#pages" text="Pages">
+                        <CustomNavLink
+                            href="#pages"
+                            text="Pages"
+                            width={navWidth}
+                        >
                             <PagesIcon />
                         </CustomNavLink>
 
-                        <CustomNavLink href="#images" text="Images">
+                        <CustomNavLink
+                            href="#images"
+                            text="Images"
+                            width={navWidth}
+                        >
                             <ImageIcon />
                         </CustomNavLink>
 
-                        <Navbar.Brand>Admin Area</Navbar.Brand>
+                        <Navbar.Brand style={{ fontSize: "2vw" }}>
+                            Admin Area
+                        </Navbar.Brand>
 
-                        <CustomNavLink href="#authors" text="Authors">
+                        <CustomNavLink
+                            href="#authors"
+                            text="Authors"
+                            width={navWidth}
+                        >
                             <UsersIcon />
                         </CustomNavLink>
 
                         <CustomNavLink
                             href="#siteConfigurations"
                             text="Website Settings"
+                            width={navWidth}
                         >
                             <SettingsIcon />
                         </CustomNavLink>
