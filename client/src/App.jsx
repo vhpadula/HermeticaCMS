@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import CreateProfilePage from "./components/pages/CreateProfilePage/CreateProfilePage";
+import MainPage from "./components/pages/MainPage";
 
 function App() {
-    return <CreateProfilePage />;
+    return <MainPage />;
 }
 
 export default App;

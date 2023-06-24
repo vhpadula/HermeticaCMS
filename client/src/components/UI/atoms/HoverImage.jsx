@@ -8,13 +8,7 @@ export default function HoverImage({ src, text }) {
         <div className="container">
             <Row>
                 <Col className="d-flex align-items-center justify-content-center m-2">
-                    <Image
-                        src={src}
-                        alt="User Placeholder"
-                        roundedCircle
-                        fluid
-                        className="image"
-                    />
+                    <Image src={src} roundedCircle fluid className="image" />
                     <div className="middle">
                         <div className="text text-center">{text}</div>
                     </div>

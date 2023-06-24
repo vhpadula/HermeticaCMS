@@ -1,10 +1,62 @@
 $theme-colors: (
     "primary": #2d033b,
     "secondary": #810ca8,
+    "tertiary": #c147e9,
+    "accent": #e5b8f4,
     "success": #9ae6b4,
     "warning": #fbd38d,
     "danger": #fc8181,
     "light": #ffffff,
     "dark": #333333,
+    "backgroundPink": #f3edf7,
 );
+
+$primary: #2d033b;
+$secondary: #810ca8;
+$tertiary: #c147e9;
+$accent: #e5b8f4;
+$success: #9ae6b4;
+$warning: #fbd38d;
+$danger: #fc8181;
+$light: #ffffff;
+$dark: #333333;
+$gray: #ced4da;
+$backgroundPink: #f3edf7;
+
+$navpill-custom-color: rgba(var(--#{$secondary}emphasis-color-rgb), 1);
+$navpill-bg-custom-color: rgba(var(--#{$accent}emphasis-color-rgb), 1);
+
+$navbar-custom-color: rgba(var(--#{$secondary}emphasis-color-rgb), 1);
+$navbar-custom-hover-color: rgba(var(--#{$secondary}emphasis-color-rgb), 0.8);
+$navbar-custom-active-color: rgba(var(--#{$secondary}emphasis-color-rgb), 1);
+$navbar-custom-disabled-color: rgba(
+    var(--#{$secondary}emphasis-color-rgb),
+    0.3
+);
+$navbar-custom-icon-color: rgba($secondary, 0.75);
+$navbar-custom-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-custom-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-custom-toggler-border-color: rgba(
+    var(--#{$primary}emphasis-color-rgb),
+    0.15
+);
+$navbar-custom-brand-color: $navbar-custom-active-color;
+$navbar-custom-brand-hover-color: $navbar-custom-active-color;
+
+[data-bs-theme="custom"] {
+    .nav-pills {
+        --bs-nav-pills-border-radius: 45px;
+        --bs-nav-pills-link-active-color: #{$primary};
+        --bs-nav-pills-link-active-bg: #{$accent};
+    }
+
+    .navbar {
+        --bs-navbar-color: #{$primary};
+        --bs-navbar-hover-color: #{$primary};
+        --bs-navbar-disabled-color: #{$secondary};
+        --bs-navbar-active-color: #{$primary};
+        --bs-navbar-brand-color: #{$secondary};
+        --bs-navbar-brand-hover-color: #{$secondary};
+        --bs-navbar-toggler-border-color: #{$secondary};
+    }
+}
 @import "node_modules/bootstrap/scss/bootstrap";

@@ -1,10 +1,10 @@
 import { Container, Row } from "react-bootstrap";
-import UpperBar from "../../UI/organisms/UpperBar";
-import AppTitle from "../../UI/atoms/text/AppTitle";
-import LoginForm from "../../UI/organisms/LoginForm";
-import "./loginPageStyles.css";
+import UpperBar from "../UI/organisms/UpperBar";
+import AppTitle from "../UI/atoms/text/AppTitle";
+import RegisterForm from "../UI/organisms/RegisterForm";
+import "./../pageStyles.css";
 
-export default function LoginPage() {
+export default function RegisterPage() {
     return (
         <div className="pageStyle">
             <Container
@@ -32,7 +32,7 @@ export default function LoginPage() {
                         maxWidth: "85vw",
                     }}
                 >
-                    <LoginForm />
+                    <RegisterForm />
                 </Container>
             </Container>
         </div>

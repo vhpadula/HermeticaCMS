@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import UpperBar from "../../UI/organisms/UpperBar";
 import AppTitle from "../../UI/atoms/text/AppTitle";
-import "./CreateProfilePageStyles.css";
+import "./../pageStyles.css";
 import ProfileForm from "../../UI/organisms/ProfileForm";
 
 export default function CreateProfilePage() {
