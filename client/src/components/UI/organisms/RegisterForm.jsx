@@ -6,7 +6,7 @@ import LockIcon from "../../../assets/icons/LockIcon";
 import MailIcon from "../../../assets/icons/MailIcon";
 import AuthInput from "../molecules/AuthInput";
 import ColorButton from "../atoms/buttons/ColorButton";
-
+import { Link } from "react-router-dom";
 function RegisterForm() {
     return (
         <Form>
@@ -63,7 +63,9 @@ function RegisterForm() {
                             margin: "3%",
                         }}
                     >
-                        <ColorButton className="w-75" text="Register" />
+                        <Link to="/auth/registerProfile" className="w-75">
+                            <ColorButton className="w-100" text="Register" />
+                        </Link>
                     </div>
                 </div>
             </Container>

@@ -5,6 +5,7 @@ import HomePageBackground from "../../../assets/icons/HomePageBackground";
 import HomePageContent from "../../UI/organisms/HomePageContent";
 import TransparentLoginButton from "../../UI/molecules/buttons/TransparentLoginButton";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -20,7 +21,9 @@ export default function HomePage() {
                                 <AboutButton />
                             </Col>
                             <Col>
-                                <TransparentLoginButton />
+                                <Link to="/auth">
+                                    <TransparentLoginButton size="lg" />
+                                </Link>
                             </Col>
                         </Row>
                     </Container>

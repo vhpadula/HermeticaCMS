@@ -4,7 +4,7 @@ import TransparentLoginButton from "../molecules/buttons/TransparentLoginButton"
 import AppLogo from "../molecules/AppLogo";
 import { Image } from "react-bootstrap";
 import userPlaceholder from "./../../../assets/pictures/userPlaceholder.jpg";
-
+import { Link } from "react-router-dom";
 export default function UpperBar({ showButton, loggedIn, showTitle }) {
     return (
         <div>
@@ -18,9 +18,10 @@ export default function UpperBar({ showButton, loggedIn, showTitle }) {
                         height: "100%",
                     }}
                 >
-                    <div>
+                    <Link to="/">
                         <AppLogo width={3.5} />
-                    </div>
+                    </Link>
+
                     {showTitle && (
                         <h1
                             className="p-2"
@@ -50,11 +51,7 @@ export default function UpperBar({ showButton, loggedIn, showTitle }) {
                             />
                         </div>
                     ) : (
-                        showButton && (
-                            <div>
-                                <TransparentLoginButton />
-                            </div>
-                        )
+                        showButton && <TransparentLoginButton />
                     )}
                 </div>
             </Rectangle>

@@ -2,7 +2,7 @@ import AppLogo from "../molecules/AppLogo";
 import WindowExample from "../../../assets/icons/WindowExample";
 import AppSubTitle from "../atoms/text/AppSubTitle";
 import GetStartedButton from "../molecules/buttons/GetStartedButton";
-
+import { Link } from "react-router-dom";
 export default function HomePageContent() {
     return (
         <div
@@ -15,7 +15,9 @@ export default function HomePageContent() {
         >
             <AppLogo />
             <AppSubTitle />
-            <GetStartedButton />
+            <Link to="/auth/register">
+                <GetStartedButton />
+            </Link>
             <WindowExample />
         </div>
     );

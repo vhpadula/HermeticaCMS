@@ -1,10 +1,17 @@
 import { Container, Row } from "react-bootstrap";
-import UpperBar from "../../UI/organisms/UpperBar";
-import AppTitle from "../../UI/atoms/text/AppTitle";
-import "./../pageStyles.css";
-import ProfileForm from "../../UI/organisms/ProfileForm";
+import UpperBar from "../UI/organisms/UpperBar";
+import AppTitle from "../UI/atoms/text/AppTitle";
+import "./pageStyles.css";
+import { Outlet } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-export default function CreateProfilePage() {
+export default function AuthPage() {
+    const location = useLocation();
+
+    const showButton =
+        location.pathname === "/auth/register" ||
+        location.pathname === "/auth/registerProfile";
+
     return (
         <div className="pageStyle">
             <Container
@@ -16,7 +23,7 @@ export default function CreateProfilePage() {
                 }}
             >
                 <Row>
-                    <UpperBar showButton={false} />
+                    <UpperBar showButton={showButton} />
                 </Row>
                 <Container className="d-flex flex-column align-items-center">
                     <Row>
@@ -32,7 +39,9 @@ export default function CreateProfilePage() {
                         maxWidth: "85vw",
                     }}
                 >
-                    <ProfileForm />
+                    <div>
+                        <Outlet />
+                    </div>
                 </Container>
             </Container>
         </div>

@@ -9,7 +9,7 @@ import AuthInput from "../molecules/AuthInput";
 import Checkbox from "../atoms/Checkbox";
 import ColorButton from "../atoms/buttons/ColorButton";
 import TransparentButton from "../atoms/buttons/TransparentButton";
-
+import { Link } from "react-router-dom";
 function LoginForm() {
     return (
         <Form>
@@ -55,10 +55,12 @@ function LoginForm() {
 
                     <Row className="m-3" style={{ gap: "20px" }}>
                         <Col>
-                            <TransparentButton
-                                className="w-100"
-                                text="Register"
-                            />
+                            <Link to="/auth/register">
+                                <TransparentButton
+                                    className="w-100"
+                                    text="Register"
+                                />
+                            </Link>
                         </Col>
 
                         <Col>
