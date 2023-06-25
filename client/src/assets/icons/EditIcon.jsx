@@ -1,12 +1,6 @@
 export default function EditIcon() {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="none"
-            viewBox="0 0 20 20"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <g clipPath="url(#a)">
                 <path
                     stroke="#2D033B"

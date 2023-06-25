@@ -6,36 +6,18 @@ import IconButton from "../atoms/buttons/IconButton";
 import EditIcon from "../../../assets/icons/EditIcon";
 import CheckmarkIcon from "../../../assets/icons/CheckmarkIcon";
 import PropTypes from "prop-types";
-import ArrowUpIcon from "../../../assets/icons/ArrowUpIcon";
-import ArrowDownIcon from "../../../assets/icons/ArrowDownIcon";
-import DeleteIcon from "../../../assets/icons/DeleteIcon";
+import TextTitleIcon from "../../../assets/icons/TextTitleIcon";
 
-export default function EditPageCard({
+export default function PageHeaderCard({
     cardId,
     initialPosition,
     updateCardPosition,
-    deleteCard,
 }) {
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [contentType, setContentType] = useState(null);
+    const contentType = "header";
     const [rectangleHeight, setRectangleHeight] = useState("10vw");
     const [editMode, setEditMode] = useState(false); // New state variable
     const [position, setPosition] = useState(initialPosition);
     const [contentValue, setContentValue] = useState(""); // State for form content value
-
-    const handleDeleteClick = () => {
-        deleteCard(cardId); // Call the deleteCard function with the cardId
-    };
-
-    const handleUpClick = () => {
-        setPosition((prevPosition) => prevPosition - 1); // Decrement position
-        updateCardPosition(cardId, position - 1, position); // Call the updateCardPosition function with the new position
-    };
-
-    const handleDownClick = () => {
-        setPosition((prevPosition) => prevPosition + 1); // Increment position
-        updateCardPosition(cardId, position + 1, position); // Call the updateCardPosition function with the new position
-    };
 
     useEffect(() => {
         const updateRectangleHeight = () => {
@@ -55,14 +37,8 @@ export default function EditPageCard({
 
     useEffect(() => {
         if (editMode) {
-            setSelectedOption(null);
         }
     }, [editMode]);
-
-    const handleOptionChange = (option) => {
-        setSelectedOption(option);
-        setContentType(option.toLowerCase());
-    };
 
     const handleContentChange = (e) => {
         setContentValue(e.target.value);
@@ -141,9 +117,6 @@ export default function EditPageCard({
 
     const handleEditModeToggle = () => {
         setEditMode((prevEditMode) => !prevEditMode);
-        setSelectedOption(
-            contentType.charAt(0).toUpperCase() + contentType.slice(1)
-        );
     };
 
     return (
@@ -164,27 +137,7 @@ export default function EditPageCard({
             >
                 <div style={{ marginRight: "10px" }}>
                     <div>
-                        <div
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                            }}
-                            onClick={handleUpClick}
-                        >
-                            <ArrowUpIcon />
-                        </div>
-                        <GridIcon />
-                        <div
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                            }}
-                            onClick={handleDownClick}
-                        >
-                            <ArrowDownIcon />
-                        </div>
+                        <TextTitleIcon />
                     </div>
                 </div>
 
@@ -195,28 +148,8 @@ export default function EditPageCard({
                                 variant="light"
                                 id="dropdown-basic"
                             >
-                                {selectedOption || "Content"}
+                                {"Header"}
                             </Dropdown.Toggle>
-
-                            <Dropdown.Menu>
-                                <Dropdown.Item
-                                    onClick={() => handleOptionChange("Header")}
-                                >
-                                    Header
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() =>
-                                        handleOptionChange("Paragraph")
-                                    }
-                                >
-                                    Paragraph
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    onClick={() => handleOptionChange("Image")}
-                                >
-                                    Image
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
                         </Dropdown>
                     </div>
                 )}
@@ -237,25 +170,14 @@ export default function EditPageCard({
                             {editMode ? <CheckmarkIcon /> : <EditIcon />}
                         </IconButton>
                     )}
-
-                    {!editMode && (
-                        <IconButton
-                            variant="outline-accent"
-                            width={1}
-                            onClick={handleDeleteClick}
-                        >
-                            <DeleteIcon />
-                        </IconButton>
-                    )}
                 </div>
             </Container>
         </Rectangle>
     );
 }
 
-EditPageCard.propTypes = {
+PageHeaderCard.propTypes = {
     cardId: PropTypes.number,
     initialPosition: PropTypes.number,
     updateCardPosition: PropTypes.func,
-    deleteCard: PropTypes.func,
 };

@@ -7,6 +7,7 @@ export default function IconButton({
     variant = "primary",
     textColor,
     width,
+    onClick, // Add onClick as a prop
 }) {
     return (
         <Button
@@ -16,6 +17,7 @@ export default function IconButton({
                 display: "flex",
                 alignItems: "center",
             }}
+            onClick={onClick} // Pass onClick to the Button component
         >
             <div
                 style={{
@@ -44,4 +46,5 @@ IconButton.propTypes = {
     variant: PropTypes.string,
     textColor: PropTypes.string,
     width: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired, // Specify onClick as a required function prop
 };

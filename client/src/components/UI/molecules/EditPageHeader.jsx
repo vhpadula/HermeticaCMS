@@ -1,13 +1,15 @@
 import { Container, Col } from "react-bootstrap";
 import IconButton from "../atoms/buttons/IconButton";
-import FilePlusIcon from "../../../assets/icons/FilePlusIcon";
+import SaveIcon from "../../../assets/icons/SaveIcon";
+import ClockIcon from "../../../assets/icons/ClockIcon";
+import PenIcon from "../../../assets/icons/PenIcon";
+import PlusCircleIcon from "../../../assets/icons/CirclePlusIcon";
 
-export default function EditPageHeader() {
-    const textStyle = {
-        color: "var(--primary-color)",
-        fontWeight: "700",
-        fontSize: "2vw",
+export default function EditPageHeader({ createCard }) {
+    const handleAddBlockClick = () => {
+        createCard(); // Call the createCard function passed as a prop
     };
+
     return (
         <Container>
             <Container
@@ -15,25 +17,32 @@ export default function EditPageHeader() {
                 style={{ gap: "5%" }}
             >
                 <Col>
-                    <span style={textStyle}>Title</span>
-                </Col>
-                <Col>
-                    <span style={textStyle}>Status</span>
-                </Col>
-                <Col>
-                    <span style={textStyle}>Author</span>
-                </Col>
-                <Col>
                     <div className="m-3">
                         <IconButton
-                            text="Add Page"
-                            variant="primary"
+                            text="Add Block"
+                            variant="secondary"
                             textColor="var(--true-white)"
-                            width={1.5}
+                            width={1.2}
+                            onClick={handleAddBlockClick} // Add onClick event handler
                         >
-                            <FilePlusIcon />
+                            <PlusCircleIcon />
                         </IconButton>
                     </div>
+                </Col>
+                <Col>
+                    <IconButton text="Save Draft" width={1}>
+                        <SaveIcon />
+                    </IconButton>
+                </Col>
+                <Col>
+                    <IconButton text="Schedule Page" width={1}>
+                        <ClockIcon />
+                    </IconButton>
+                </Col>
+                <Col>
+                    <IconButton text="Publish Page" width={1}>
+                        <PenIcon />
+                    </IconButton>
                 </Col>
             </Container>
             <div
