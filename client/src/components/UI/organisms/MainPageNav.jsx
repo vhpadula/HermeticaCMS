@@ -6,6 +6,8 @@ import PagesIcon from "../../../assets/icons/PageIcon";
 import ImageIcon from "../../../assets/icons/ImageIcon";
 import UsersIcon from "../../../assets/icons/UsersIcon";
 import SettingsIcon from "../../../assets/icons/SettingsIcon";
+import { Link } from "react-router-dom";
+
 import CustomNavLink from "./../molecules/CustomNavLink";
 export default function MainPageNav() {
     const navWidth = 1.5;
@@ -38,14 +40,16 @@ export default function MainPageNav() {
             >
                 <Container className="me-auto flex-column ">
                     <div className="m-3">
-                        <IconButton
-                            text="Go to Website"
-                            variant="light"
-                            textColor="var(--primary-color)"
-                            width={1.5}
-                        >
-                            <OpenBookIcon />
-                        </IconButton>
+                        <Link to="/Website">
+                            <IconButton
+                                text="Go to Website"
+                                variant="light"
+                                textColor="var(--primary-color)"
+                                width={1.5}
+                            >
+                                <OpenBookIcon />
+                            </IconButton>
+                        </Link>
                     </div>
 
                     <Nav className="flex-column text-center " variant="pills">

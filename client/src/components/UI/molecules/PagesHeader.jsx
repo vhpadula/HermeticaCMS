@@ -1,6 +1,7 @@
 import { Container, Col } from "react-bootstrap";
 import IconButton from "../atoms/buttons/IconButton";
 import FilePlusIcon from "../../../assets/icons/FilePlusIcon";
+import { Link } from "react-router-dom";
 
 export default function PagesHeader() {
     const textStyle = {
@@ -25,14 +26,16 @@ export default function PagesHeader() {
                 </Col>
                 <Col>
                     <div className="m-3">
-                        <IconButton
-                            text="Add Page"
-                            variant="primary"
-                            textColor="var(--true-white)"
-                            width={1.5}
-                        >
-                            <FilePlusIcon />
-                        </IconButton>
+                        <Link to="/main/EditPage">
+                            <IconButton
+                                text="Add Page"
+                                variant="primary"
+                                textColor="var(--true-white)"
+                                width={1.5}
+                            >
+                                <FilePlusIcon />
+                            </IconButton>
+                        </Link>
                     </div>
                 </Col>
             </Container>

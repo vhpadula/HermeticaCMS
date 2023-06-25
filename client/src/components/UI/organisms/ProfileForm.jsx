@@ -7,6 +7,7 @@ import ColorButton from "../atoms/buttons/ColorButton";
 import PersonIcon from "../../../assets/icons/PersonIcon";
 import HoverImage from "../atoms/HoverImage";
 import userPlaceholder from "./../../../assets/pictures/userPlaceholder.jpg";
+import { Link } from "react-router-dom";
 function ProfileForm() {
     return (
         <Form>
@@ -42,7 +43,12 @@ function ProfileForm() {
                             margin: "3%",
                         }}
                     >
-                        <ColorButton className="w-75" text="Create Profile" />
+                        <Link to="/main">
+                            <ColorButton
+                                className="w-75"
+                                text="Create Profile"
+                            />
+                        </Link>
                     </div>
                 </div>
             </Container>

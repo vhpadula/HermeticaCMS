@@ -51,7 +51,11 @@ export default function UpperBar({ showButton, loggedIn, showTitle }) {
                             />
                         </div>
                     ) : (
-                        showButton && <TransparentLoginButton />
+                        showButton && (
+                            <Link to="/Auth">
+                                <TransparentLoginButton />
+                            </Link>
+                        )
                     )}
                 </div>
             </Rectangle>

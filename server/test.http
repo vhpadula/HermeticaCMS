@@ -1,0 +1,16 @@
+@APIURL=http://localhost:3000/api
+
+
+
+
+
+// Test register
+POST {{APIURL}}/register
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "fullname": "Test User",
+    "password": "password123",
+    "imageFile": "your_base64_encoded_image_here"
+}

@@ -10,6 +10,7 @@ import ImagesTab from "./components/UI/organisms/ImagesTab";
 import AuthorsTab from "./components/UI/organisms/AuthorsTab";
 import SettingsTab from "./components/UI/organisms/SettingsTab";
 import EditPageTab from "./components/UI/organisms/EditPageTab";
+import Website from "./components/pages/Website";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                     />
                     <Route path="editPage" element={<EditPageTab />} />
                 </Route>
+                <Route path="Website" element={<Website />} />
             </Routes>
         </Router>
     );
