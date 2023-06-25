@@ -1,14 +1,34 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { useLocation } from "react-router-dom"; // Import the useLocation hook
 import IconButton from "../atoms/buttons/IconButton";
 import OpenBookIcon from "../../../assets/icons/OpenBookIcon";
 import PagesIcon from "../../../assets/icons/PageIcon";
 import ImageIcon from "../../../assets/icons/ImageIcon";
 import UsersIcon from "../../../assets/icons/UsersIcon";
 import SettingsIcon from "../../../assets/icons/SettingsIcon";
-import CustomNavLink from "./../molecules/CustomNavLink"; // Import the CustomNavLink component
-
+import CustomNavLink from "./../molecules/CustomNavLink";
 export default function MainPageNav() {
     const navWidth = 1.5;
+    const location = useLocation(); // Get the current location using useLocation hook
+
+    // Define an object with the paths and their corresponding pill names
+    const pathToPillMap = {
+        "/main/pages": "Pages",
+        "/main/images": "Images",
+        "/main/authors": "Authors",
+        "/main/siteConfigurations": "Website Settings",
+    };
+
+    // Get the active pill based on the current location
+    const getActivePill = () => {
+        const currentPath = location.pathname;
+        return Object.keys(pathToPillMap).find((path) =>
+            currentPath.startsWith(path)
+        );
+    };
+
+    const activePill = getActivePill();
+
     return (
         <div data-bs-theme="custom" style={{ height: "100vh" }}>
             <Navbar
@@ -28,27 +48,25 @@ export default function MainPageNav() {
                         </IconButton>
                     </div>
 
-                    <Nav
-                        defaultActiveKey="#pages"
-                        className="flex-column text-center "
-                        variant="pills"
-                    >
+                    <Nav className="flex-column text-center " variant="pills">
                         <Navbar.Brand style={{ fontSize: "2vw" }}>
                             Author Area
                         </Navbar.Brand>
 
                         <CustomNavLink
-                            href="#pages"
+                            href="/main/pages"
                             text="Pages"
                             width={navWidth}
+                            active={activePill === "/main/pages"} // Set active prop based on the current location
                         >
                             <PagesIcon />
                         </CustomNavLink>
 
                         <CustomNavLink
-                            href="#images"
+                            href="/main/images"
                             text="Images"
                             width={navWidth}
+                            active={activePill === "/main/images"} // Set active prop based on the current location
                         >
                             <ImageIcon />
                         </CustomNavLink>
@@ -58,17 +76,19 @@ export default function MainPageNav() {
                         </Navbar.Brand>
 
                         <CustomNavLink
-                            href="#authors"
+                            href="/main/authors"
                             text="Authors"
                             width={navWidth}
+                            active={activePill === "/main/authors"} // Set active prop based on the current location
                         >
                             <UsersIcon />
                         </CustomNavLink>
 
                         <CustomNavLink
-                            href="#siteConfigurations"
+                            href="/main/siteConfigurations"
                             text="Website Settings"
                             width={navWidth}
+                            active={activePill === "/main/siteConfigurations"} // Set active prop based on the current location
                         >
                             <SettingsIcon />
                         </CustomNavLink>

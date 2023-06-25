@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 
-const ColorButton = ({ className, text }) => {
+const ColorButton = ({ className, text, size, variant }) => {
     return (
-        <Button variant="secondary" size="lg" className={className}>
+        <Button variant={variant} size={size} className={className}>
             {text}
         </Button>
     );
@@ -12,6 +12,13 @@ const ColorButton = ({ className, text }) => {
 ColorButton.propTypes = {
     text: PropTypes.string.isRequired,
     className: PropTypes.string.isRequired,
+    size: PropTypes.oneOf(["sm", "md", "lg"]),
+    variant: PropTypes.string,
+};
+
+ColorButton.defaultProps = {
+    size: "lg",
+    variant: "secondary",
 };
 
 export default ColorButton;

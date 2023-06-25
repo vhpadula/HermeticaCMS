@@ -17,13 +17,23 @@ export default function IconButton({
                 alignItems: "center",
             }}
         >
-            <div style={{ marginRight: "10%", width: `${width * 2.5}vw` }}>
+            <div
+                style={{
+                    display: "flex-column",
+                    marginRight: text ? "10%" : "0",
+                    width: `${width * 2.5}vw`,
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
                 {children}
             </div>
 
-            <span style={{ color: textColor, fontSize: `${width}vw` }}>
-                {text}
-            </span>
+            {text && (
+                <span style={{ color: textColor, fontSize: `${width}vw` }}>
+                    {text}
+                </span>
+            )}
         </Button>
     );
 }

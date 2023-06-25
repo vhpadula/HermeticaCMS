@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import UpperBar from "../UI/organisms/UpperBar";
 import "./pageStyles.css";
 import MainPageNav from "../UI/organisms/MainPageNav";
-import PagesTab from "../UI/organisms/PagesTab";
+import { Outlet } from "react-router-dom";
 
 export default function MainPage() {
     return (
@@ -20,7 +20,7 @@ export default function MainPage() {
                 style={{ height: "100vh", padding: 0 }}
             >
                 <MainPageNav />
-                <PagesTab />
+                <Outlet />
             </Container>
         </div>
     );
