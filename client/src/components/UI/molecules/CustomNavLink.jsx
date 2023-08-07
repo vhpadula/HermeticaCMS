@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import { Nav } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 const CustomNavLink = ({ href, text, width, children, active }) => {
     return (
         <Nav.Item>
             <Nav.Link
+                as={Link}
+                to={href}
                 href={href}
                 active={active}
                 style={{
