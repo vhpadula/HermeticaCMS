@@ -182,36 +182,8 @@ app.put("/pages/:id", (req, res) => {
     );
 });
 
-app.post("/pages", (req, res) => {
-    const newPage = req.body;
-
-    // Execute SQL INSERT statement
-    db.run(
-        "INSERT INTO pages (title, author, creation_date, published_date, status, blocks) VALUES (?, ?, ?, ?, ?, ?)",
-        [
-            newPage.title,
-            newPage.author,
-            newPage.creationDate,
-            newPage.publishedDate,
-            newPage.status,
-            JSON.stringify(newPage.blocks),
-        ],
-        function (error) {
-            if (error) {
-                console.error("Error inserting page:", error);
-                res.status(500).json({ error: "Failed to insert the page." });
-            } else {
-                const insertedPageId = this.lastID;
-                console.log(
-                    `Page with ID ${insertedPageId} successfully inserted.`
-                );
-                res.status(201).json({
-                    message: "Page inserted successfully.",
-                    id: insertedPageId,
-                });
-            }
-        }
-    );
+app.get("/image_url2", (req, res) => {
+    res.sendFile("image_url2.jpg");
 });
 
 app.listen(PORT, () => {

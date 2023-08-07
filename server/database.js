@@ -66,4 +66,53 @@ db.serialize(() => {
     insertStatement.finalize();
 });
 
+// Assuming you have already established a connection to the database and it's represented by the variable 'db'.
+
+const newPage = {
+    title: "Page 4",
+    author: "John Doe",
+    creationDate: "2023-08-07",
+    publishedDate: "2023-08-07",
+    status: "published",
+    blocks: [
+        { type: "header", content: "Page 4 Header" },
+        {
+            type: "paragraph",
+            content: "This is the first paragraph of Page 4.",
+        },
+        {
+            type: "paragraph",
+            content: "This is the second paragraph of Page 4.",
+        },
+        {
+            type: "paragraph",
+            content: "This is the second paragraph of Page 4.",
+        },
+    ],
+};
+
+db.run(
+    "INSERT INTO pages (title, author, creation_date, published_date, status, blocks) VALUES (?, ?, ?, ?, ?, ?)",
+    [
+        newPage.title,
+        newPage.author,
+        newPage.creationDate,
+        newPage.publishedDate,
+        newPage.status,
+        JSON.stringify(newPage.blocks),
+    ],
+    function (error) {
+        if (error) {
+            console.error("Error inserting page:", error);
+            // Handle the error appropriately
+        } else {
+            const insertedPageId = this.lastID;
+            console.log(
+                `Page with ID ${insertedPageId} successfully inserted.`
+            );
+            // Handle the success response appropriately
+        }
+    }
+);
+
 module.exports = db;

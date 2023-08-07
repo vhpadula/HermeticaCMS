@@ -64,7 +64,7 @@ function LoginForm() {
                         </Col>
 
                         <Col>
-                            <Link to="/main">
+                            <Link to="/main/pages">
                                 <ColorButton className="w-100" text="Login" />
                             </Link>
                         </Col>
